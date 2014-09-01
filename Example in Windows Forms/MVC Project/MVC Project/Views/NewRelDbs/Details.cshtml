@@ -1,0 +1,42 @@
+﻿@model MVC_Project.Models.EntityModel.NewRelDb
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewRelDb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Field1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Field1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article.ArticleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article.ArticleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mistake.MistakeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mistake.MistakeDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

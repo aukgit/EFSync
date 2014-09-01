@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="exam2ModelStoreContainer" CdmEntityContainer="TestDbEntities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="exam2Model.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="ArticleName" ColumnName="ArticleName" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chapters">
+      <EntityTypeMapping TypeName="exam2Model.Chapter">
+        <MappingFragment StoreEntitySet="Chapter">
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ChapterName" ColumnName="ChapterName" />
+          <ScalarProperty Name="ChapterNumber" ColumnName="ChapterNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Choices">
+      <EntityTypeMapping TypeName="exam2Model.Choice">
+        <MappingFragment StoreEntitySet="Choice">
+          <ScalarProperty Name="Choice_A_B_C_D_" ColumnName="Choice(A,B,C,D)" />
+          <ScalarProperty Name="QuestionNo" ColumnName="QuestionNo" />
+          <ScalarProperty Name="AnswerChoiceId" ColumnName="AnswerChoiceId" />
+          <ScalarProperty Name="ChoiceNo" ColumnName="ChoiceNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favourites">
+      <EntityTypeMapping TypeName="exam2Model.Favourite">
+        <MappingFragment StoreEntitySet="Favourite">
+          <ScalarProperty Name="List" ColumnName="List" />
+          <ScalarProperty Name="FiveMostFavourite" ColumnName="FiveMostFavourite" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FavouriteItemNO" ColumnName="FavouriteItemNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LearningPiles">
+      <EntityTypeMapping TypeName="exam2Model.LearningPile">
+        <MappingFragment StoreEntitySet="LearningPile">
+          <ScalarProperty Name="QuestionSetNo" ColumnName="QuestionSetNo" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PileList" ColumnName="PileList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MakeMcqQuestions">
+      <EntityTypeMapping TypeName="exam2Model.MakeMcqQuestion">
+        <MappingFragment StoreEntitySet="MakeMcqQuestion">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OptionField" ColumnName="OptionField" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="QuestionNo" ColumnName="QuestionNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCQs">
+      <EntityTypeMapping TypeName="exam2Model.MCQ">
+        <MappingFragment StoreEntitySet="MCQ">
+          <ScalarProperty Name="TimeLinit" ColumnName="TimeLinit" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="QuestionSetNo" ColumnName="QuestionSetNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCQTAKENs">
+      <EntityTypeMapping TypeName="exam2Model.MCQTAKEN">
+        <MappingFragment StoreEntitySet="MCQTAKEN">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="QuestionSetNo" ColumnName="QuestionSetNo" />
+          <ScalarProperty Name="TimeTook" ColumnName="TimeTook" />
+          <ScalarProperty Name="Takendate" ColumnName="Takendate" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="TakenNo" ColumnName="TakenNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mistakes">
+      <EntityTypeMapping TypeName="exam2Model.Mistake">
+        <MappingFragment StoreEntitySet="Mistake">
+          <ScalarProperty Name="MistakeDescription" ColumnName="MistakeDescription" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="MistakeNo" ColumnName="MistakeNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewRelDbs">
+      <EntityTypeMapping TypeName="exam2Model.NewRelDb">
+        <MappingFragment StoreEntitySet="NewRelDb">
+          <ScalarProperty Name="MistakeNo" ColumnName="MistakeNo" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="exam2Model.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="MailID" ColumnName="MailID" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="NotiNo" ColumnName="NotiNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationSeens">
+      <EntityTypeMapping TypeName="exam2Model.NotificationSeen">
+        <MappingFragment StoreEntitySet="NotificationSeen">
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NotiSeenNo" ColumnName="NotiSeenNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="exam2Model.Profile">
+        <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Countryname" ColumnName="Countryname" />
+          <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ProfileNo" ColumnName="ProfileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="exam2Model.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="Notlearned" ColumnName="Notlearned" />
+          <ScalarProperty Name="Learned" ColumnName="Learned" />
+          <ScalarProperty Name="AnswerChoiceId" ColumnName="AnswerChoiceId" />
+          <ScalarProperty Name="PinpointTime" ColumnName="PinpointTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="QuestionSetNo" ColumnName="QuestionSetNo" />
+          <ScalarProperty Name="QuestionNo" ColumnName="QuestionNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="exam2Model.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="TeachingTecniques" ColumnName="TeachingTecniques" />
+          <ScalarProperty Name="Clear" ColumnName="Clear" />
+          <ScalarProperty Name="Mistakes" ColumnName="Mistakes" />
+          <ScalarProperty Name="VideoQuality" ColumnName="VideoQuality" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RatingSerial" ColumnName="RatingSerial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SamepleTables">
+      <EntityTypeMapping TypeName="exam2Model.SamepleTable">
+        <MappingFragment StoreEntitySet="SamepleTable">
+          <ScalarProperty Name="HelloNewTable" ColumnName="HelloNewTable" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="exam2Model.Subject">
+        <MappingFragment StoreEntitySet="Subject">
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuggestedVideos">
+      <EntityTypeMapping TypeName="exam2Model.SuggestedVideo">
+        <MappingFragment StoreEntitySet="SuggestedVideo">
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="VideoNo" ColumnName="VideoNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="exam2Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="exam2Model.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="ChapterNumber" ColumnName="ChapterNumber" />
+          <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+          <ScalarProperty Name="TopicNo" ColumnName="TopicNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="exam2Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WishLists">
+      <EntityTypeMapping TypeName="exam2Model.WishList">
+        <MappingFragment StoreEntitySet="WishList">
+          <ScalarProperty Name="EnlistedDate" ColumnName="EnlistedDate" />
+          <ScalarProperty Name="TopicNo" ColumnName="TopicNo" />
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ListNo" ColumnName="ListNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="exam2Model.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="ArticleNo" ColumnName="ArticleNo" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CommentNo" ColumnName="CommentNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

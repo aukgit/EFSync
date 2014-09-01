@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0453cd20d01a4169acd7e7ff7d5ff016" Name="Diagram1">
+        <EntityTypeShape EntityType="exam2Model.Article" Width="1.5" PointX="0.75" PointY="13.875" />
+        <EntityTypeShape EntityType="exam2Model.Chapter" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="exam2Model.Choice" Width="1.5" PointX="7.5" PointY="32.625" />
+        <EntityTypeShape EntityType="exam2Model.Favourite" Width="1.5" PointX="3" PointY="18.5" />
+        <EntityTypeShape EntityType="exam2Model.LearningPile" Width="1.5" PointX="5.25" PointY="35.75" />
+        <EntityTypeShape EntityType="exam2Model.MakeMcqQuestion" Width="1.5" PointX="3" PointY="40" />
+        <EntityTypeShape EntityType="exam2Model.MCQ" Width="1.5" PointX="3" PointY="30.375" />
+        <EntityTypeShape EntityType="exam2Model.MCQTAKEN" Width="1.5" PointX="5.25" PointY="28.25" />
+        <EntityTypeShape EntityType="exam2Model.Mistake" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="exam2Model.NewRelDb" Width="1.5" PointX="8.25" PointY="14.625" />
+        <EntityTypeShape EntityType="exam2Model.Notification" Width="1.5" PointX="3" PointY="37.25" />
+        <EntityTypeShape EntityType="exam2Model.NotificationSeen" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="exam2Model.Profile" Width="1.5" PointX="3" PointY="33.75" />
+        <EntityTypeShape EntityType="exam2Model.Question" Width="1.5" PointX="5.25" PointY="32.25" />
+        <EntityTypeShape EntityType="exam2Model.Rating" Width="1.5" PointX="3" PointY="10.375" />
+        <EntityTypeShape EntityType="exam2Model.SamepleTable" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="exam2Model.Subject" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="exam2Model.SuggestedVideo" Width="1.5" PointX="3" PointY="26.375" />
+        <EntityTypeShape EntityType="exam2Model.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="exam2Model.Topic" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="exam2Model.User" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="exam2Model.WishList" Width="1.5" PointX="6" PointY="14.5" />
+        <EntityTypeShape EntityType="exam2Model.Comment" Width="1.5" PointX="3" PointY="23.625" />
+        <AssociationConnector Association="exam2Model.FK_Comments_Article" />
+        <AssociationConnector Association="exam2Model.FK_Favourite_Article" />
+        <AssociationConnector Association="exam2Model.FK_Favourite_Article1" />
+        <AssociationConnector Association="exam2Model.FK_MCQ_Article" />
+        <AssociationConnector Association="exam2Model.FK_Mistake_Article" />
+        <AssociationConnector Association="exam2Model.FK_NewRelDb_Article" />
+        <AssociationConnector Association="exam2Model.FK_Rating_Article" />
+        <AssociationConnector Association="exam2Model.FK_SuggestedVideo_Article" />
+        <AssociationConnector Association="exam2Model.FK_SuggestedVideo_Article1" />
+        <AssociationConnector Association="exam2Model.FK_WishList_Article" />
+        <AssociationConnector Association="exam2Model.FK_WishList_Article1" />
+        <AssociationConnector Association="exam2Model.FK_Chapter_Subject" />
+        <AssociationConnector Association="exam2Model.FK_Topic_Chapter" />
+        <AssociationConnector Association="exam2Model.FK_Choice_Question" />
+        <AssociationConnector Association="exam2Model.FK_Favourite_User" />
+        <AssociationConnector Association="exam2Model.FK_LearningPile_MCQ" />
+        <AssociationConnector Association="exam2Model.FK_MakeMcqQuestion_User" />
+        <AssociationConnector Association="exam2Model.FK_MCQTAKEN_MCQ" />
+        <AssociationConnector Association="exam2Model.FK_Question_MCQ" />
+        <AssociationConnector Association="exam2Model.FK_MCQTAKEN_User" />
+        <AssociationConnector Association="exam2Model.FK_Mistake_User" />
+        <AssociationConnector Association="exam2Model.FK_NewRelDb_Mistake" />
+        <AssociationConnector Association="exam2Model.FK_Notification_User" />
+        <AssociationConnector Association="exam2Model.FK_NotificationSeen_User" />
+        <AssociationConnector Association="exam2Model.FK_Profile_User" />
+        <AssociationConnector Association="exam2Model.FK_Rating_User" />
+        <AssociationConnector Association="exam2Model.FK_WishList_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

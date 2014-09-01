@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="exam2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articles" EntityType="exam2Model.Article" />
+    <EntitySet Name="Chapters" EntityType="exam2Model.Chapter" />
+    <EntitySet Name="Choices" EntityType="exam2Model.Choice" />
+    <EntitySet Name="Favourites" EntityType="exam2Model.Favourite" />
+    <EntitySet Name="LearningPiles" EntityType="exam2Model.LearningPile" />
+    <EntitySet Name="MakeMcqQuestions" EntityType="exam2Model.MakeMcqQuestion" />
+    <EntitySet Name="MCQs" EntityType="exam2Model.MCQ" />
+    <EntitySet Name="MCQTAKENs" EntityType="exam2Model.MCQTAKEN" />
+    <EntitySet Name="Mistakes" EntityType="exam2Model.Mistake" />
+    <EntitySet Name="NewRelDbs" EntityType="exam2Model.NewRelDb" />
+    <EntitySet Name="Notifications" EntityType="exam2Model.Notification" />
+    <EntitySet Name="NotificationSeens" EntityType="exam2Model.NotificationSeen" />
+    <EntitySet Name="Profiles" EntityType="exam2Model.Profile" />
+    <EntitySet Name="Questions" EntityType="exam2Model.Question" />
+    <EntitySet Name="Ratings" EntityType="exam2Model.Rating" />
+    <EntitySet Name="SamepleTables" EntityType="exam2Model.SamepleTable" />
+    <EntitySet Name="Subjects" EntityType="exam2Model.Subject" />
+    <EntitySet Name="SuggestedVideos" EntityType="exam2Model.SuggestedVideo" />
+    <EntitySet Name="sysdiagrams" EntityType="exam2Model.sysdiagram" />
+    <EntitySet Name="Topics" EntityType="exam2Model.Topic" />
+    <EntitySet Name="Users" EntityType="exam2Model.User" />
+    <EntitySet Name="WishLists" EntityType="exam2Model.WishList" />
+    <EntitySet Name="Comments" EntityType="exam2Model.Comment" />
+    <AssociationSet Name="FK_Comments_Article" Association="exam2Model.FK_Comments_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Favourite_Article" Association="exam2Model.FK_Favourite_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Favourite" EntitySet="Favourites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Favourite_Article1" Association="exam2Model.FK_Favourite_Article1">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Favourite" EntitySet="Favourites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MCQ_Article" Association="exam2Model.FK_MCQ_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="MCQ" EntitySet="MCQs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mistake_Article" Association="exam2Model.FK_Mistake_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Mistake" EntitySet="Mistakes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewRelDb_Article" Association="exam2Model.FK_NewRelDb_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="NewRelDb" EntitySet="NewRelDbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Article" Association="exam2Model.FK_Rating_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuggestedVideo_Article" Association="exam2Model.FK_SuggestedVideo_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="SuggestedVideo" EntitySet="SuggestedVideos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuggestedVideo_Article1" Association="exam2Model.FK_SuggestedVideo_Article1">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="SuggestedVideo" EntitySet="SuggestedVideos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_Article" Association="exam2Model.FK_WishList_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="WishList" EntitySet="WishLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_Article1" Association="exam2Model.FK_WishList_Article1">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="WishList" EntitySet="WishLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chapter_Subject" Association="exam2Model.FK_Chapter_Subject">
+      <End Role="Subject" EntitySet="Subjects" />
+      <End Role="Chapter" EntitySet="Chapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Topic_Chapter" Association="exam2Model.FK_Topic_Chapter">
+      <End Role="Chapter" EntitySet="Chapters" />
+      <End Role="Topic" EntitySet="Topics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Choice_Question" Association="exam2Model.FK_Choice_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Choice" EntitySet="Choices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Favourite_User" Association="exam2Model.FK_Favourite_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Favourite" EntitySet="Favourites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LearningPile_MCQ" Association="exam2Model.FK_LearningPile_MCQ">
+      <End Role="MCQ" EntitySet="MCQs" />
+      <End Role="LearningPile" EntitySet="LearningPiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MakeMcqQuestion_User" Association="exam2Model.FK_MakeMcqQuestion_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MakeMcqQuestion" EntitySet="MakeMcqQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MCQTAKEN_MCQ" Association="exam2Model.FK_MCQTAKEN_MCQ">
+      <End Role="MCQ" EntitySet="MCQs" />
+      <End Role="MCQTAKEN" EntitySet="MCQTAKENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_MCQ" Association="exam2Model.FK_Question_MCQ">
+      <End Role="MCQ" EntitySet="MCQs" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MCQTAKEN_User" Association="exam2Model.FK_MCQTAKEN_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MCQTAKEN" EntitySet="MCQTAKENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mistake_User" Association="exam2Model.FK_Mistake_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Mistake" EntitySet="Mistakes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewRelDb_Mistake" Association="exam2Model.FK_NewRelDb_Mistake">
+      <End Role="Mistake" EntitySet="Mistakes" />
+      <End Role="NewRelDb" EntitySet="NewRelDbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notification_User" Association="exam2Model.FK_Notification_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Notification" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotificationSeen_User" Association="exam2Model.FK_NotificationSeen_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="NotificationSeen" EntitySet="NotificationSeens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profile_User" Association="exam2Model.FK_Profile_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_User" Association="exam2Model.FK_Rating_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_User" Association="exam2Model.FK_WishList_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="WishList" EntitySet="WishLists" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ArticleNo" />
+    </Key>
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="ArticleName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TopicId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="exam2Model.FK_Comments_Article" FromRole="Article" ToRole="Comment" />
+    <NavigationProperty Name="Favourites" Relationship="exam2Model.FK_Favourite_Article" FromRole="Article" ToRole="Favourite" />
+    <NavigationProperty Name="Favourites1" Relationship="exam2Model.FK_Favourite_Article1" FromRole="Article" ToRole="Favourite" />
+    <NavigationProperty Name="MCQs" Relationship="exam2Model.FK_MCQ_Article" FromRole="Article" ToRole="MCQ" />
+    <NavigationProperty Name="Mistakes" Relationship="exam2Model.FK_Mistake_Article" FromRole="Article" ToRole="Mistake" />
+    <NavigationProperty Name="NewRelDbs" Relationship="exam2Model.FK_NewRelDb_Article" FromRole="Article" ToRole="NewRelDb" />
+    <NavigationProperty Name="Ratings" Relationship="exam2Model.FK_Rating_Article" FromRole="Article" ToRole="Rating" />
+    <NavigationProperty Name="SuggestedVideos" Relationship="exam2Model.FK_SuggestedVideo_Article" FromRole="Article" ToRole="SuggestedVideo" />
+    <NavigationProperty Name="SuggestedVideos1" Relationship="exam2Model.FK_SuggestedVideo_Article1" FromRole="Article" ToRole="SuggestedVideo" />
+    <NavigationProperty Name="WishLists" Relationship="exam2Model.FK_WishList_Article" FromRole="Article" ToRole="WishList" />
+    <NavigationProperty Name="WishLists1" Relationship="exam2Model.FK_WishList_Article1" FromRole="Article" ToRole="WishList" />
+  </EntityType>
+  <EntityType Name="Chapter">
+    <Key>
+      <PropertyRef Name="ChapterNumber" />
+    </Key>
+    <Property Name="ChapterNumber" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChapterName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SubjectId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Subject" Relationship="exam2Model.FK_Chapter_Subject" FromRole="Chapter" ToRole="Subject" />
+    <NavigationProperty Name="Topics" Relationship="exam2Model.FK_Topic_Chapter" FromRole="Chapter" ToRole="Topic" />
+  </EntityType>
+  <EntityType Name="Choice">
+    <Key>
+      <PropertyRef Name="ChoiceNo" />
+    </Key>
+    <Property Name="ChoiceNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnswerChoiceId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="QuestionNo" Type="Byte" Nullable="false" />
+    <Property Name="Choice_A_B_C_D_" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Question" Relationship="exam2Model.FK_Choice_Question" FromRole="Choice" ToRole="Question" />
+  </EntityType>
+  <EntityType Name="Favourite">
+    <Key>
+      <PropertyRef Name="FavouriteItemNO" />
+    </Key>
+    <Property Name="FavouriteItemNO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="FiveMostFavourite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="List" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_Favourite_Article" FromRole="Favourite" ToRole="Article" />
+    <NavigationProperty Name="Article1" Relationship="exam2Model.FK_Favourite_Article1" FromRole="Favourite" ToRole="Article" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_Favourite_User" FromRole="Favourite" ToRole="User" />
+  </EntityType>
+  <EntityType Name="LearningPile">
+    <Key>
+      <PropertyRef Name="PileList" />
+    </Key>
+    <Property Name="PileList" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="QuestionSetNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MCQ" Relationship="exam2Model.FK_LearningPile_MCQ" FromRole="LearningPile" ToRole="MCQ" />
+  </EntityType>
+  <EntityType Name="MakeMcqQuestion">
+    <Key>
+      <PropertyRef Name="QuestionNo" />
+    </Key>
+    <Property Name="QuestionNo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Answer" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="OptionField" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_MakeMcqQuestion_User" FromRole="MakeMcqQuestion" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MCQ">
+    <Key>
+      <PropertyRef Name="QuestionSetNo" />
+    </Key>
+    <Property Name="QuestionSetNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="TimeLinit" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_MCQ_Article" FromRole="MCQ" ToRole="Article" />
+    <NavigationProperty Name="LearningPiles" Relationship="exam2Model.FK_LearningPile_MCQ" FromRole="MCQ" ToRole="LearningPile" />
+    <NavigationProperty Name="MCQTAKENs" Relationship="exam2Model.FK_MCQTAKEN_MCQ" FromRole="MCQ" ToRole="MCQTAKEN" />
+    <NavigationProperty Name="Questions" Relationship="exam2Model.FK_Question_MCQ" FromRole="MCQ" ToRole="Question" />
+  </EntityType>
+  <EntityType Name="MCQTAKEN">
+    <Key>
+      <PropertyRef Name="TakenNo" />
+    </Key>
+    <Property Name="TakenNo" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marks" Type="Int32" Nullable="false" />
+    <Property Name="Takendate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeTook" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="QuestionSetNo" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="MCQ" Relationship="exam2Model.FK_MCQTAKEN_MCQ" FromRole="MCQTAKEN" ToRole="MCQ" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_MCQTAKEN_User" FromRole="MCQTAKEN" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Mistake">
+    <Key>
+      <PropertyRef Name="MistakeNo" />
+    </Key>
+    <Property Name="MistakeNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="MistakeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_Mistake_Article" FromRole="Mistake" ToRole="Article" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_Mistake_User" FromRole="Mistake" ToRole="User" />
+    <NavigationProperty Name="NewRelDbs" Relationship="exam2Model.FK_NewRelDb_Mistake" FromRole="Mistake" ToRole="NewRelDb" />
+  </EntityType>
+  <EntityType Name="NewRelDb">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Field1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="MistakeNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_NewRelDb_Article" FromRole="NewRelDb" ToRole="Article" />
+    <NavigationProperty Name="Mistake" Relationship="exam2Model.FK_NewRelDb_Mistake" FromRole="NewRelDb" ToRole="Mistake" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotiNo" />
+    </Key>
+    <Property Name="NotiNo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int64" Nullable="false" />
+    <Property Name="Display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MailID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_Notification_User" FromRole="Notification" ToRole="User" />
+  </EntityType>
+  <EntityType Name="NotificationSeen">
+    <Key>
+      <PropertyRef Name="NotiSeenNo" />
+    </Key>
+    <Property Name="NotiSeenNo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="Display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_NotificationSeen_User" FromRole="NotificationSeen" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileNo" />
+    </Key>
+    <Property Name="ProfileNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="dateofbirth" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Countryname" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_Profile_User" FromRole="Profile" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionNo" />
+    </Key>
+    <Property Name="QuestionNo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionSetNo" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PinpointTime" Type="Int32" Nullable="false" />
+    <Property Name="AnswerChoiceId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Learned" Type="Byte" />
+    <Property Name="Notlearned" Type="Byte" />
+    <NavigationProperty Name="Choices" Relationship="exam2Model.FK_Choice_Question" FromRole="Question" ToRole="Choice" />
+    <NavigationProperty Name="MCQ" Relationship="exam2Model.FK_Question_MCQ" FromRole="Question" ToRole="MCQ" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="RatingSerial" />
+    </Key>
+    <Property Name="RatingSerial" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="VideoQuality" Type="Byte" />
+    <Property Name="Mistakes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Clear" Type="Byte" />
+    <Property Name="TeachingTecniques" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_Rating_Article" FromRole="Rating" ToRole="Article" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_Rating_User" FromRole="Rating" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SamepleTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="HelloNewTable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Chapters" Relationship="exam2Model.FK_Chapter_Subject" FromRole="Subject" ToRole="Chapter" />
+  </EntityType>
+  <EntityType Name="SuggestedVideo">
+    <Key>
+      <PropertyRef Name="VideoNo" />
+    </Key>
+    <Property Name="VideoNo" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_SuggestedVideo_Article" FromRole="SuggestedVideo" ToRole="Article" />
+    <NavigationProperty Name="Article1" Relationship="exam2Model.FK_SuggestedVideo_Article1" FromRole="SuggestedVideo" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="TopicNo" />
+    </Key>
+    <Property Name="TopicNo" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TopicName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChapterNumber" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Chapter" Relationship="exam2Model.FK_Topic_Chapter" FromRole="Topic" ToRole="Chapter" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Favourites" Relationship="exam2Model.FK_Favourite_User" FromRole="User" ToRole="Favourite" />
+    <NavigationProperty Name="MakeMcqQuestions" Relationship="exam2Model.FK_MakeMcqQuestion_User" FromRole="User" ToRole="MakeMcqQuestion" />
+    <NavigationProperty Name="MCQTAKENs" Relationship="exam2Model.FK_MCQTAKEN_User" FromRole="User" ToRole="MCQTAKEN" />
+    <NavigationProperty Name="Mistakes" Relationship="exam2Model.FK_Mistake_User" FromRole="User" ToRole="Mistake" />
+    <NavigationProperty Name="Notifications" Relationship="exam2Model.FK_Notification_User" FromRole="User" ToRole="Notification" />
+    <NavigationProperty Name="NotificationSeens" Relationship="exam2Model.FK_NotificationSeen_User" FromRole="User" ToRole="NotificationSeen" />
+    <NavigationProperty Name="Profiles" Relationship="exam2Model.FK_Profile_User" FromRole="User" ToRole="Profile" />
+    <NavigationProperty Name="Ratings" Relationship="exam2Model.FK_Rating_User" FromRole="User" ToRole="Rating" />
+    <NavigationProperty Name="WishLists" Relationship="exam2Model.FK_WishList_User" FromRole="User" ToRole="WishList" />
+  </EntityType>
+  <EntityType Name="WishList">
+    <Key>
+      <PropertyRef Name="ListNo" />
+    </Key>
+    <Property Name="ListNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <Property Name="TopicNo" Type="Int16" Nullable="false" />
+    <Property Name="EnlistedDate" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_WishList_Article" FromRole="WishList" ToRole="Article" />
+    <NavigationProperty Name="Article1" Relationship="exam2Model.FK_WishList_Article1" FromRole="WishList" ToRole="Article" />
+    <NavigationProperty Name="User" Relationship="exam2Model.FK_WishList_User" FromRole="WishList" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentNo" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="ArticleNo" />
+    </Key>
+    <Property Name="CommentNo" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reply" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Article" Relationship="exam2Model.FK_Comments_Article" FromRole="Comment" ToRole="Article" />
+  </EntityType>
+  <Association Name="FK_Comments_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Favourite_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.Favourite" Role="Favourite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="Favourite">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Favourite_Article1">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.Favourite" Role="Favourite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="Favourite">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MCQ_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.MCQ" Role="MCQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="MCQ">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mistake_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.Mistake" Role="Mistake" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="Mistake">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewRelDb_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.NewRelDb" Role="NewRelDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="NewRelDb">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuggestedVideo_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.SuggestedVideo" Role="SuggestedVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="SuggestedVideo">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuggestedVideo_Article1">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.SuggestedVideo" Role="SuggestedVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="SuggestedVideo">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_Article">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.WishList" Role="WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_Article1">
+    <End Type="exam2Model.Article" Role="Article" Multiplicity="1" />
+    <End Type="exam2Model.WishList" Role="WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleNo" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="ArticleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chapter_Subject">
+    <End Type="exam2Model.Subject" Role="Subject" Multiplicity="1" />
+    <End Type="exam2Model.Chapter" Role="Chapter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="Chapter">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Topic_Chapter">
+    <End Type="exam2Model.Chapter" Role="Chapter" Multiplicity="1" />
+    <End Type="exam2Model.Topic" Role="Topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapter">
+        <PropertyRef Name="ChapterNumber" />
+      </Principal>
+      <Dependent Role="Topic">
+        <PropertyRef Name="ChapterNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Choice_Question">
+    <End Type="exam2Model.Question" Role="Question" Multiplicity="1" />
+    <End Type="exam2Model.Choice" Role="Choice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="QuestionNo" />
+      </Principal>
+      <Dependent Role="Choice">
+        <PropertyRef Name="QuestionNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Favourite_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.Favourite" Role="Favourite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Favourite">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LearningPile_MCQ">
+    <End Type="exam2Model.MCQ" Role="MCQ" Multiplicity="1" />
+    <End Type="exam2Model.LearningPile" Role="LearningPile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MCQ">
+        <PropertyRef Name="QuestionSetNo" />
+      </Principal>
+      <Dependent Role="LearningPile">
+        <PropertyRef Name="QuestionSetNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MakeMcqQuestion_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.MakeMcqQuestion" Role="MakeMcqQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MakeMcqQuestion">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MCQTAKEN_MCQ">
+    <End Type="exam2Model.MCQ" Role="MCQ" Multiplicity="1" />
+    <End Type="exam2Model.MCQTAKEN" Role="MCQTAKEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MCQ">
+        <PropertyRef Name="QuestionSetNo" />
+      </Principal>
+      <Dependent Role="MCQTAKEN">
+        <PropertyRef Name="QuestionSetNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_MCQ">
+    <End Type="exam2Model.MCQ" Role="MCQ" Multiplicity="1" />
+    <End Type="exam2Model.Question" Role="Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MCQ">
+        <PropertyRef Name="QuestionSetNo" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="QuestionSetNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MCQTAKEN_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.MCQTAKEN" Role="MCQTAKEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MCQTAKEN">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mistake_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.Mistake" Role="Mistake" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Mistake">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewRelDb_Mistake">
+    <End Type="exam2Model.Mistake" Role="Mistake" Multiplicity="1" />
+    <End Type="exam2Model.NewRelDb" Role="NewRelDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mistake">
+        <PropertyRef Name="MistakeNo" />
+      </Principal>
+      <Dependent Role="NewRelDb">
+        <PropertyRef Name="MistakeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notification_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.Notification" Role="Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotificationSeen_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.NotificationSeen" Role="NotificationSeen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="NotificationSeen">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profile_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.Profile" Role="Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_User">
+    <End Type="exam2Model.User" Role="User" Multiplicity="1" />
+    <End Type="exam2Model.WishList" Role="WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
